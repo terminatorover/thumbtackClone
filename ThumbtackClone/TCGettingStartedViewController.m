@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *goBack;
 
+@property (weak, nonatomic) IBOutlet UIView *gettingStarted;
 @property (nonatomic) NSArray *cards;
 @end
 
@@ -81,10 +82,11 @@ static NSInteger currentSlide ;
                                     selector:@selector(moveOut)
                                    userInfo:nil
                                     repeats:YES];
-
     
-    //move in the first slide "manually", aka without the use of the timer
 
+    //setup gettingStarted View
+    [self setUpGettinStarted];
+    
     currentSlide = 1 ;
     
 }
@@ -95,8 +97,40 @@ static NSInteger currentSlide ;
 
 -(void)viewDidAppear:(BOOL)animated{
     [self animateTopViewIn];
+    
+    //move in the first slide "manually", aka without the use of the timer
     [self moveIn];
 }
+
+
+
+
+
+#pragma mark - seting up getting Started View when the view Loads 
+-(void)setUpGettinStarted{
+    //make the gettingStarted view no existant as far as the user is concerned
+    self.gettingStarted.alpha = 0.0f;
+    self.gettingStarted.userInteractionEnabled = NO;
+    //some setup for the textfields in getting started
+    UITextField *serviceNeeded = (UITextField *)[self.gettingStarted viewWithTag:1];
+    UITextField *zipCode = (UITextField *)[self.gettingStarted viewWithTag:11];
+    
+    
+    
+    NSString *placeHolderTextForServiceNeeded = @"What service do you need?";
+    NSString *placeHolderTextZipCode = @"Near Which ZipCode";
+    UIColor *color = [UIColor colorWithRed:216.0f/255.0f green:198.0f/255.0f blue:198.0f/255.0f alpha:1.0];
+    
+    serviceNeeded.attributedPlaceholder =[[NSAttributedString alloc] initWithString:placeHolderTextForServiceNeeded
+                                                                         attributes:@{NSForegroundColorAttributeName: color}];
+    
+    
+    zipCode.attributedPlaceholder =[[NSAttributedString alloc] initWithString:placeHolderTextZipCode
+                                                                         attributes:@{NSForegroundColorAttributeName: color}];
+    
+
+}
+
 
 
 #pragma mark - getting the views into the screen
@@ -106,10 +140,11 @@ static NSInteger currentSlide ;
     CGRect newFrame = self.topView.frame;
     newFrame.origin.y -= 50;
     
-    [UIView animateWithDuration:.6 animations:^{
+    [UIView animateWithDuration:.6
+                     animations:^{
         
-        self.topView.frame = newFrame;
-        self.topView.alpha = 1.0f;
+                        self.topView.frame = newFrame;
+                        self.topView.alpha = 1.0f;
 
     }];
     
@@ -119,6 +154,7 @@ static NSInteger currentSlide ;
 
 #pragma mark - set the views up so they are off the screen 
 -(void)setupTopBottomViews{
+    
     
 }
 
@@ -186,7 +222,35 @@ static NSInteger currentSlide ;
                      }];
 }
 
+#pragma mark - handling what happens when the user wants to get started
+- (IBAction)gettingStarted:(id)sender {
+    //first fade out the top view Controller
+    [UIView animateWithDuration:.5
+                     animations:^{
+                         self.topView.alpha = 0.0f;
+                     }
+                     completion:^(BOOL done){
+                         self.topView.userInteractionEnabled = NO;
+                         CGRect gettingStartedPostion = self.gettingStarted.frame;
+                         gettingStartedPostion.origin.y -= 100;
+                         //now animate in the gettingStartedView
+                         [UIView animateWithDuration:.3
+                                          animations:^{
+                                              self.gettingStarted.alpha = 1.0;
+                                              self.gettingStarted.frame = gettingStartedPostion;
 
+                                          }
+                                          completion:^(BOOL done){
+                                              NSLog(@"ALL DONE");
+                                          
+                                          }];
+                         
+                         
+                         
+                         
+                     }];
+    
+}
 
 
 
