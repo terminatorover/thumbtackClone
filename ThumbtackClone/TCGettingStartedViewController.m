@@ -22,7 +22,11 @@
 @implementation TCGettingStartedViewController
 
 
+
 static NSInteger currentSlide ;
+static BOOL tappedGettingStarted;
+
+
 - (IBAction)signIn:(id)sender {
     [self.email setEnabled:YES];
     self.email.alpha = 0.0f;
@@ -57,7 +61,36 @@ static NSInteger currentSlide ;
                          [self.email resignFirstResponder];
                      }];
     
-}
+    //get back to the starting scene
+    CGRect gettingStartedOriginalPostion = self.gettingStarted.frame;
+    gettingStartedOriginalPostion.origin.y += 160.0f;
+
+    if(tappedGettingStarted){
+        //first fade out the top view Controller
+    [UIView animateWithDuration:.5
+                     animations:^{
+                         self.gettingStarted.alpha = 0.0f;
+                         self.gettingStarted.frame = gettingStartedOriginalPostion  ;
+                     }
+                     completion:^(BOOL done){
+                         self.gettingStarted.userInteractionEnabled = NO;
+                         [UIView animateWithDuration:.5
+                                          animations:^{
+                                              self.topView.alpha = 1.0f;
+                                          }
+                                          completion:^(BOOL done){
+                                              NSLog(@"ALL DONE");
+                                              self.topView.userInteractionEnabled = YES;
+                                              tappedGettingStarted = NO;
+                                          }];
+                         
+                         
+                     }];
+    }
+    
+    }
+    
+
 
 - (void)viewDidLoad
 {
@@ -86,6 +119,7 @@ static NSInteger currentSlide ;
 
     //setup gettingStarted View
     [self setUpGettinStarted];
+    tappedGettingStarted = NO;
     
     currentSlide = 1 ;
     
@@ -225,6 +259,11 @@ static NSInteger currentSlide ;
 #pragma mark - handling what happens when the user wants to get started
 - (IBAction)gettingStarted:(id)sender {
     //first fade out the top view Controller
+    if(!tappedGettingStarted){
+        UIBarButtonItem *signIn  = self.navigationController.navigationItem.rightBarButtonItem;
+        //strickly a hack to hide the barbutton item
+        signIn.width = 0.01;
+    
     [UIView animateWithDuration:.5
                      animations:^{
                          self.topView.alpha = 0.0f;
@@ -250,6 +289,9 @@ static NSInteger currentSlide ;
                          
                          
                      }];
+        tappedGettingStarted = YES;
+    }
+
     
 }
 
