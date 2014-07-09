@@ -21,6 +21,10 @@
 		28549764196D9183003982A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549746196D9183003982A6 /* UIKit.framework */; };
 		2854976C196D9183003982A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2854976A196D9183003982A6 /* InfoPlist.strings */; };
 		2854976E196D9183003982A6 /* ThumbtackCloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854976D196D9183003982A6 /* ThumbtackCloneTests.m */; };
+		28549783196D93F3003982A6 /* TCGettingStartedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549782196D93F3003982A6 /* TCGettingStartedViewController.m */; };
+		28549786196D9435003982A6 /* TCMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549785196D9435003982A6 /* TCMatchesViewController.m */; };
+		28549789196D9492003982A6 /* TCPrefrenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549788196D9492003982A6 /* TCPrefrenceViewController.m */; };
+		2854978C196D951C003982A6 /* TCProjectSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		28549769196D9183003982A6 /* ThumbtackCloneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThumbtackCloneTests-Info.plist"; sourceTree = "<group>"; };
 		2854976B196D9183003982A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2854976D196D9183003982A6 /* ThumbtackCloneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThumbtackCloneTests.m; sourceTree = "<group>"; };
+		28549781196D93F3003982A6 /* TCGettingStartedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCGettingStartedViewController.h; sourceTree = "<group>"; };
+		28549782196D93F3003982A6 /* TCGettingStartedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCGettingStartedViewController.m; sourceTree = "<group>"; };
+		28549784196D9435003982A6 /* TCMatchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCMatchesViewController.h; sourceTree = "<group>"; };
+		28549785196D9435003982A6 /* TCMatchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCMatchesViewController.m; sourceTree = "<group>"; };
+		28549787196D9492003982A6 /* TCPrefrenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPrefrenceViewController.h; sourceTree = "<group>"; };
+		28549788196D9492003982A6 /* TCPrefrenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPrefrenceViewController.m; sourceTree = "<group>"; };
+		2854978A196D951C003982A6 /* TCProjectSubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProjectSubmitViewController.h; sourceTree = "<group>"; };
+		2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProjectSubmitViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 		28549748196D9183003982A6 /* ThumbtackClone */ = {
 			isa = PBXGroup;
 			children = (
+				28549777196D91A3003982A6 /* ViewControllers */,
 				28549751196D9183003982A6 /* TCAppDelegate.h */,
 				28549752196D9183003982A6 /* TCAppDelegate.m */,
 				28549754196D9183003982A6 /* Main.storyboard */,
@@ -150,6 +163,21 @@
 				2854976A196D9183003982A6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28549777196D91A3003982A6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				28549781196D93F3003982A6 /* TCGettingStartedViewController.h */,
+				28549782196D93F3003982A6 /* TCGettingStartedViewController.m */,
+				28549784196D9435003982A6 /* TCMatchesViewController.h */,
+				28549785196D9435003982A6 /* TCMatchesViewController.m */,
+				28549787196D9492003982A6 /* TCPrefrenceViewController.h */,
+				28549788196D9492003982A6 /* TCPrefrenceViewController.m */,
+				2854978A196D951C003982A6 /* TCProjectSubmitViewController.h */,
+				2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28549786196D9435003982A6 /* TCMatchesViewController.m in Sources */,
+				28549783196D93F3003982A6 /* TCGettingStartedViewController.m in Sources */,
+				28549789196D9492003982A6 /* TCPrefrenceViewController.m in Sources */,
 				28549759196D9183003982A6 /* TCViewController.m in Sources */,
 				2854974F196D9183003982A6 /* main.m in Sources */,
 				28549753196D9183003982A6 /* TCAppDelegate.m in Sources */,
+				2854978C196D951C003982A6 /* TCProjectSubmitViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
