@@ -17,6 +17,18 @@
 
 @implementation TCGettingStartedViewController
 
+- (IBAction)signIn:(id)sender {
+    [self.email setEnabled:YES];
+
+    self.email.alpha = 0.0f;
+    self.email.hidden = NO;
+    [UIView  animateWithDuration:.4 animations:^{
+        self.email.alpha = 1.0f;
+    }];
+    
+    
+    
+}
 
 
 - (void)viewDidLoad
@@ -28,6 +40,9 @@
     //setup
     [self setUpEmail];
     //make sure it's not seen
+    [self setupTopBottomViews];
+    
+    
     self.topView.alpha = 0;
 
     
@@ -40,6 +55,7 @@
     [self animateBottomViewIn];
 }
 
+
 #pragma mark - getting the views into the screen
 -(void)animateTopViewIn{
 
@@ -51,24 +67,22 @@
         
         self.topView.frame = newFrame;
         self.topView.alpha = 1.0f;
-        
 
-        
-    
     }];
     
 }
+
+
 
 -(void)animateBottomViewIn{
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+#pragma mark - set the views up so they are off the screen 
+-(void)setupTopBottomViews{
+    
+}
 
 #pragma mark - setting up email textField
 -(void)setUpEmail{
@@ -76,7 +90,13 @@
     NSString *placeHolderText = @"Enter your e-mail address";
     UIColor *color = [UIColor colorWithRed:160.0f/255.0f green:158.0f/255.0f blue:158.0f/255.0f alpha:1.0];
     
-    self.email.attributedPlaceholder =[[NSAttributedString alloc] initWithString:placeHolderText attributes:@{NSForegroundColorAttributeName: color}];
+    self.email.attributedPlaceholder =[[NSAttributedString alloc] initWithString:placeHolderText
+                                                                      attributes:@{NSForegroundColorAttributeName: color}];
+    
+    //disable and hide it
+    [self.email setEnabled:NO];
+    self.email.hidden = YES;
+    
 }
 
 /*

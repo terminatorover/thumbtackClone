@@ -91,6 +91,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sign in" id="7mS-Ux-LdD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="signIn:" destination="vXZ-lx-hvc" id="rCz-fM-8yX"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
