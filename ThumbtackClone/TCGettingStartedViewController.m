@@ -10,19 +10,14 @@
 
 @interface TCGettingStartedViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UIView *topView;
+@property (weak, nonatomic) IBOutlet UILabel *bottomView;
 
 @end
 
 @implementation TCGettingStartedViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+
 
 - (void)viewDidLoad
 {
@@ -32,8 +27,39 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     //setup
     [self setUpEmail];
+    //make sure it's not seen
+    self.topView.alpha = 0;
 
     
+}
+
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self animateTopViewIn];
+    [self animateBottomViewIn];
+}
+
+#pragma mark - getting the views into the screen
+-(void)animateTopViewIn{
+
+
+    CGRect newFrame = self.topView.frame;
+    newFrame.origin.y -= 50;
+    
+    [UIView animateWithDuration:.6 animations:^{
+        
+        self.topView.frame = newFrame;
+        self.topView.alpha = 1.0f;
+        
+
+        
+    
+    }];
+    
+}
+
+-(void)animateBottomViewIn{
     
 }
 
@@ -44,7 +70,7 @@
 }
 
 
-#pragma mark - setting up textField
+#pragma mark - setting up email textField
 -(void)setUpEmail{
     self.email.textColor = [UIColor whiteColor];
     NSString *placeHolderText = @"Enter your e-mail address";
