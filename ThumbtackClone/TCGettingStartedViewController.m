@@ -9,6 +9,7 @@
 #import "TCGettingStartedViewController.h"
 
 @interface TCGettingStartedViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *email;
 
 @end
 
@@ -29,6 +30,10 @@
     // Do any additional setup after loading the view.
     NSLog(@"Here");
     self.navigationController.view.backgroundColor = [UIColor clearColor];
+    //setup
+    [self setUpEmail];
+
+    
     
 }
 
@@ -36,6 +41,16 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - setting up textField
+-(void)setUpEmail{
+    self.email.textColor = [UIColor whiteColor];
+    NSString *placeHolderText = @"Enter your e-mail address";
+    UIColor *color = [UIColor colorWithRed:160.0f/255.0f green:158.0f/255.0f blue:158.0f/255.0f alpha:1.0];
+    
+    self.email.attributedPlaceholder =[[NSAttributedString alloc] initWithString:placeHolderText attributes:@{NSForegroundColorAttributeName: color}];
 }
 
 /*
