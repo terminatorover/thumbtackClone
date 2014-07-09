@@ -232,9 +232,9 @@ static NSInteger currentSlide ;
                      completion:^(BOOL done){
                          self.topView.userInteractionEnabled = NO;
                          CGRect gettingStartedPostion = self.gettingStarted.frame;
-                         gettingStartedPostion.origin.y -= 100;
+                         gettingStartedPostion.origin.y -= 160;
                          //now animate in the gettingStartedView
-                         [UIView animateWithDuration:.3
+                         [UIView animateWithDuration:.5
                                           animations:^{
                                               self.gettingStarted.alpha = 1.0;
                                               self.gettingStarted.frame = gettingStartedPostion;
@@ -242,6 +242,7 @@ static NSInteger currentSlide ;
                                           }
                                           completion:^(BOOL done){
                                               NSLog(@"ALL DONE");
+                                              self.gettingStarted.userInteractionEnabled = YES;
                                           
                                           }];
                          
