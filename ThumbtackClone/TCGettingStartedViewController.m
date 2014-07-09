@@ -20,6 +20,8 @@
 
 @implementation TCGettingStartedViewController
 
+
+static NSInteger currentSlide ;
 - (IBAction)signIn:(id)sender {
     [self.email setEnabled:YES];
     self.email.alpha = 0.0f;
@@ -73,12 +75,16 @@
     self.goBack.customView.hidden = YES;
     //
     NSTimeInterval timeInterval = 4.0f;
-    NSInvocation *callMe = [[NSInvocation alloc] init];
-    [callMe setTarget:self];
-    [callMe setSelector:@selector(move)];
+
+    [NSTimer scheduledTimerWithTimeInterval:timeInterval
+                                     target:self 
+                                    selector:@selector(move)
+                                   userInfo:nil
+                                    repeats:YES];
+
     
-    //configuring the slides
-    [NSTimer scheduledTimerWithTimeInterval:timeInterval invocation:callMe repeats:YES];
+    //
+    currentSlide = 0 ;
     
 }
 
@@ -181,6 +187,23 @@ static BOOL clicked = NO;
 #pragma mark - sets appropriate text and moves it
 
 -(void)move{
+    NSLog(@"FIRED TIMER");
+    NSInteger currentSlideIndex = currentSlide % 3;
+    UILabel *label = (UILabel *) [self.bottomView viewWithTag:0];
+    UILabel *info = (UILabel *)[self.bottomView viewWithTag:1];
+    
+    NSDictionary *card = [self.cards objectAtIndex:currentSlideIndex];
+    
+    NSString *labelText = card[@"label"];
+    NSString *infoText = card[@"info"];
+    
+    currentSlide += 1;
+    if ( currentSlide %2 == 0){
+        [self moveIn];
+    }else{
+        [self moveOut];
+    }
+
     
 }
 
