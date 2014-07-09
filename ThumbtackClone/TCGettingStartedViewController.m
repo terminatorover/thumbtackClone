@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *goBack;
 
+@property (nonatomic) NSArray *cards;
 @end
 
 @implementation TCGettingStartedViewController
@@ -31,6 +32,7 @@
     
     [self.email becomeFirstResponder];
     self.goBack.customView.hidden = NO;
+    
     
     
 }
@@ -69,8 +71,18 @@
     self.topView.alpha = 0;
     //hide the back button
     self.goBack.customView.hidden = YES;
+    //
+    NSTimeInterval timeInterval = 4.0f;
+    NSInvocation *callMe = [[NSInvocation alloc] init];
+    [callMe setTarget:self];
+    [callMe setSelector:@selector(move)];
+    
+    //configuring the slides
+    [NSTimer scheduledTimerWithTimeInterval:timeInterval invocation:callMe repeats:YES];
     
 }
+
+
 
 
 
@@ -143,17 +155,14 @@ static BOOL clicked = NO;
     
     [UIView animateWithDuration:.6
                      animations:^{
-                         
                          self.bottomView.frame = bottomFrame;
-                         NSLog(@"Move out");
-                         NSLog(@"X cord: %f",self.bottomView.frame.origin.x);
-                     
                      }
                      completion:^(BOOL done){
                          CGRect resetFrame = self.bottomView.frame;
                          resetFrame.origin.x = 400;
                          self.bottomView.frame = resetFrame;
     }];
+
     
 }
 
@@ -168,6 +177,14 @@ static BOOL clicked = NO;
                      }];
 }
 
+
+#pragma mark - sets appropriate text and moves it
+
+-(void)move{
+    
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -178,5 +195,25 @@ static BOOL clicked = NO;
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - intalize what we set the info in the cards to show
+-(NSArray *) cards{
+    
+    if(!_cards){
+        NSDictionary *card1 = @{@"label":@"   We introduce you to pros",
+                                @"info":@"  Within hours, we'll introduce you to serveral professionals who can            complete your project"};
+        NSDictionary *card2 = @{@"label":@"   Tell us what you need",
+                                @"info":@"   Let us know how we can help by answering questions about the projects you want to accomplish"};
+        NSDictionary *card3 = @{@"label":@"   Hire the right Professional",
+                                @"info":@"       Compare and hire an exprienced professional at a price that's right for you"};
+        
+        _cards = @[card1,card2,card3];
+        
+    }
+    return _cards;
+
+}
+
+
 
 @end
