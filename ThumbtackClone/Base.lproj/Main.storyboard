@@ -40,27 +40,30 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="go"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="aH3-Ke-V6A"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </view>
                             <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aum-Gr-f3T">
-                                <rect key="frame" x="45" y="328" width="230" height="155"/>
+                                <rect key="frame" x="400" y="328" width="228" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="   We introduce you to pros" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEN-Fk-Ucz">
-                                        <rect key="frame" x="1" y="10" width="224" height="44"/>
+                                        <rect key="frame" x="-1" y="10" width="224" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vt-bM-fdH">
-                                        <rect key="frame" x="37" y="55" width="168" height="1"/>
+                                        <rect key="frame" x="35" y="55" width="168" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Within hours, we'll introduce you to serveral professionals who can            complete your project" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="225" translatesAutoresizingMaskIntoConstraints="NO" id="Csx-uw-beq">
-                                        <rect key="frame" x="3" y="66" width="225" height="69"/>
+                                        <rect key="frame" x="1" y="66" width="225" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -101,8 +104,9 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="bottomView" destination="kEN-Fk-Ucz" id="0qW-lk-J8S"/>
+                        <outlet property="bottomView" destination="Aum-Gr-f3T" id="EYF-7H-TYU"/>
                         <outlet property="email" destination="HOm-Km-vXA" id="zml-lo-R5P"/>
+                        <outlet property="goBack" destination="NIT-r8-Saj" id="3SY-eM-SEm"/>
                         <outlet property="topView" destination="kGV-W1-D7l" id="QR2-W5-c4c"/>
                     </connections>
                 </viewController>

@@ -8,10 +8,12 @@
 
 #import "TCGettingStartedViewController.h"
 
-@interface TCGettingStartedViewController ()
+@interface TCGettingStartedViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UIView *topView;
-@property (weak, nonatomic) IBOutlet UILabel *bottomView;
+
+@property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *goBack;
 
 @end
 
@@ -28,6 +30,8 @@
     }];
     
     [self.email becomeFirstResponder];
+    self.goBack.customView.hidden = NO;
+    
     
 }
 
@@ -63,7 +67,8 @@
     
     
     self.topView.alpha = 0;
-
+    //hide the back button
+    self.goBack.customView.hidden = YES;
     
 }
 
@@ -116,6 +121,33 @@
     [self.email setEnabled:NO];
     self.email.hidden = YES;
     
+}
+
+#pragma mark - helper method for moving the buttomView "in and out"
+
+-(void)moveOut{
+    //first move it out with animation and then move it to the right side of the screen
+    CGRect bottomFrame = self.bottomView.frame;
+    bottomFrame.origin.x = -300;
+    
+    [UIView animateWithDuration:.3
+                     animations:^{
+                         self.bottomView.frame = bottomFrame;
+                         
+                     }];
+
+    bottomFrame.origin.x = 400;
+}
+
+-(void)moveIn{
+    CGRect bottomFrame = self.bottomView.frame;
+    bottomFrame.origin.x = 47;
+    
+    [UIView animateWithDuration:.3
+                     animations:^{
+                         self.bottomView.frame = bottomFrame;
+                         
+                     }];
 }
 
 /*
