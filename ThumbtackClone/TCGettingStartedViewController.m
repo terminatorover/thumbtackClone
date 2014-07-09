@@ -117,23 +117,6 @@ static NSInteger currentSlide ;
 
 
 
--(void)animateBottomViewIn{
-    
-}
-
-static BOOL clicked = NO;
-- (IBAction)checker:(id)sender {
-    if (!clicked){
-        [self moveIn];
-        clicked  = YES;
-    }else{
-        [self moveOut];
-        clicked = NO;
-    }
-//    [self move];
-    
-}
-
 #pragma mark - set the views up so they are off the screen 
 -(void)setupTopBottomViews{
     
@@ -226,7 +209,7 @@ static BOOL clicked = NO;
                                 @"info":@"  Within hours, we'll introduce you to serveral professionals who can            complete your project"};
         NSDictionary *card2 = @{@"label":@"   Tell us what you need",
                                 @"info":@"   Let us know how we can help by answering questions about the projects you want to accomplish"};
-        NSDictionary *card3 = @{@"label":@" Hire the right Professional",
+        NSDictionary *card3 = @{@"label":@"  Hire the right Professional",
                                 @"info":@"Compare and hire an exprienced professional at a price that's right for you"};
         
         _cards = @[card1,card2,card3];
