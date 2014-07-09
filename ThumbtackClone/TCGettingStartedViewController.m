@@ -19,17 +19,36 @@
 
 - (IBAction)signIn:(id)sender {
     [self.email setEnabled:YES];
-
     self.email.alpha = 0.0f;
     self.email.hidden = NO;
-    [UIView  animateWithDuration:.4 animations:^{
+    [UIView  animateWithDuration:.4
+                      animations:^{
         self.email.alpha = 1.0f;
+
     }];
     
-    
+    [self.email becomeFirstResponder];
     
 }
 
+
+
+- (IBAction)previous:(id)sender {
+    [self.email setEnabled:NO];
+    
+    self.email.alpha = 1.0f;
+
+    [UIView animateWithDuration:.4
+                     animations:^{
+                         self.email.alpha = 0.0f;
+                         
+                     }
+                     completion:^(BOOL done) {
+                         self.email.hidden = YES;
+                         [self.email resignFirstResponder];
+                     }];
+    
+}
 
 - (void)viewDidLoad
 {

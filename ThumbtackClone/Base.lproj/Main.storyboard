@@ -86,8 +86,11 @@
                         <barButtonItem id="UCs-3L-FX3"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="dNV-WX-Jnu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NIT-r8-Saj">
+                        <barButtonItem key="leftBarButtonItem" image="Previous" id="NIT-r8-Saj">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="previous:" destination="vXZ-lx-hvc" id="uOL-mc-bQT"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Sign in" id="7mS-Ux-LdD">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -149,6 +152,7 @@
     <resources>
         <image name="10.jpg" width="1620" height="1073"/>
         <image name="Anchor" width="25" height="26"/>
+        <image name="Previous" width="11" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
