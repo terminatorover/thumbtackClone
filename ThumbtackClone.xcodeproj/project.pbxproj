@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28549743196D9183003982A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549742196D9183003982A6 /* Foundation.framework */; };
+		28549745196D9183003982A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549744196D9183003982A6 /* CoreGraphics.framework */; };
+		28549747196D9183003982A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549746196D9183003982A6 /* UIKit.framework */; };
+		2854974D196D9183003982A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2854974B196D9183003982A6 /* InfoPlist.strings */; };
+		2854974F196D9183003982A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854974E196D9183003982A6 /* main.m */; };
+		28549753196D9183003982A6 /* TCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549752196D9183003982A6 /* TCAppDelegate.m */; };
+		28549756196D9183003982A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28549754196D9183003982A6 /* Main.storyboard */; };
+		28549759196D9183003982A6 /* TCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549758196D9183003982A6 /* TCViewController.m */; };
+		2854975B196D9183003982A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2854975A196D9183003982A6 /* Images.xcassets */; };
+		28549762196D9183003982A6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549761196D9183003982A6 /* XCTest.framework */; };
+		28549763196D9183003982A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549742196D9183003982A6 /* Foundation.framework */; };
+		28549764196D9183003982A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28549746196D9183003982A6 /* UIKit.framework */; };
+		2854976C196D9183003982A6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2854976A196D9183003982A6 /* InfoPlist.strings */; };
+		2854976E196D9183003982A6 /* ThumbtackCloneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854976D196D9183003982A6 /* ThumbtackCloneTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28549765196D9183003982A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 28549737196D9183003982A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2854973E196D9183003982A6;
+			remoteInfo = ThumbtackClone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2854973F196D9183003982A6 /* ThumbtackClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThumbtackClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28549742196D9183003982A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		28549744196D9183003982A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		28549746196D9183003982A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2854974A196D9183003982A6 /* ThumbtackClone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThumbtackClone-Info.plist"; sourceTree = "<group>"; };
+		2854974C196D9183003982A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2854974E196D9183003982A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		28549750196D9183003982A6 /* ThumbtackClone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThumbtackClone-Prefix.pch"; sourceTree = "<group>"; };
+		28549751196D9183003982A6 /* TCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCAppDelegate.h; sourceTree = "<group>"; };
+		28549752196D9183003982A6 /* TCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCAppDelegate.m; sourceTree = "<group>"; };
+		28549755196D9183003982A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28549757196D9183003982A6 /* TCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCViewController.h; sourceTree = "<group>"; };
+		28549758196D9183003982A6 /* TCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCViewController.m; sourceTree = "<group>"; };
+		2854975A196D9183003982A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		28549760196D9183003982A6 /* ThumbtackCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThumbtackCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28549761196D9183003982A6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		28549769196D9183003982A6 /* ThumbtackCloneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThumbtackCloneTests-Info.plist"; sourceTree = "<group>"; };
+		2854976B196D9183003982A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2854976D196D9183003982A6 /* ThumbtackCloneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThumbtackCloneTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2854973C196D9183003982A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28549745196D9183003982A6 /* CoreGraphics.framework in Frameworks */,
+				28549747196D9183003982A6 /* UIKit.framework in Frameworks */,
+				28549743196D9183003982A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2854975D196D9183003982A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28549762196D9183003982A6 /* XCTest.framework in Frameworks */,
+				28549764196D9183003982A6 /* UIKit.framework in Frameworks */,
+				28549763196D9183003982A6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28549736196D9183003982A6 = {
+			isa = PBXGroup;
+			children = (
+				28549748196D9183003982A6 /* ThumbtackClone */,
+				28549767196D9183003982A6 /* ThumbtackCloneTests */,
+				28549741196D9183003982A6 /* Frameworks */,
+				28549740196D9183003982A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28549740196D9183003982A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2854973F196D9183003982A6 /* ThumbtackClone.app */,
+				28549760196D9183003982A6 /* ThumbtackCloneTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28549741196D9183003982A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28549742196D9183003982A6 /* Foundation.framework */,
+				28549744196D9183003982A6 /* CoreGraphics.framework */,
+				28549746196D9183003982A6 /* UIKit.framework */,
+				28549761196D9183003982A6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		28549748196D9183003982A6 /* ThumbtackClone */ = {
+			isa = PBXGroup;
+			children = (
+				28549751196D9183003982A6 /* TCAppDelegate.h */,
+				28549752196D9183003982A6 /* TCAppDelegate.m */,
+				28549754196D9183003982A6 /* Main.storyboard */,
+				28549757196D9183003982A6 /* TCViewController.h */,
+				28549758196D9183003982A6 /* TCViewController.m */,
+				2854975A196D9183003982A6 /* Images.xcassets */,
+				28549749196D9183003982A6 /* Supporting Files */,
+			);
+			path = ThumbtackClone;
+			sourceTree = "<group>";
+		};
+		28549749196D9183003982A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2854974A196D9183003982A6 /* ThumbtackClone-Info.plist */,
+				2854974B196D9183003982A6 /* InfoPlist.strings */,
+				2854974E196D9183003982A6 /* main.m */,
+				28549750196D9183003982A6 /* ThumbtackClone-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28549767196D9183003982A6 /* ThumbtackCloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				2854976D196D9183003982A6 /* ThumbtackCloneTests.m */,
+				28549768196D9183003982A6 /* Supporting Files */,
+			);
+			path = ThumbtackCloneTests;
+			sourceTree = "<group>";
+		};
+		28549768196D9183003982A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28549769196D9183003982A6 /* ThumbtackCloneTests-Info.plist */,
+				2854976A196D9183003982A6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2854973E196D9183003982A6 /* ThumbtackClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28549771196D9183003982A6 /* Build configuration list for PBXNativeTarget "ThumbtackClone" */;
+			buildPhases = (
+				2854973B196D9183003982A6 /* Sources */,
+				2854973C196D9183003982A6 /* Frameworks */,
+				2854973D196D9183003982A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThumbtackClone;
+			productName = ThumbtackClone;
+			productReference = 2854973F196D9183003982A6 /* ThumbtackClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2854975F196D9183003982A6 /* ThumbtackCloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28549774196D9183003982A6 /* Build configuration list for PBXNativeTarget "ThumbtackCloneTests" */;
+			buildPhases = (
+				2854975C196D9183003982A6 /* Sources */,
+				2854975D196D9183003982A6 /* Frameworks */,
+				2854975E196D9183003982A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				28549766196D9183003982A6 /* PBXTargetDependency */,
+			);
+			name = ThumbtackCloneTests;
+			productName = ThumbtackCloneTests;
+			productReference = 28549760196D9183003982A6 /* ThumbtackCloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28549737196D9183003982A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = EnterWithBoldness;
+				TargetAttributes = {
+					2854975F196D9183003982A6 = {
+						TestTargetID = 2854973E196D9183003982A6;
+					};
+				};
+			};
+			buildConfigurationList = 2854973A196D9183003982A6 /* Build configuration list for PBXProject "ThumbtackClone" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28549736196D9183003982A6;
+			productRefGroup = 28549740196D9183003982A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2854973E196D9183003982A6 /* ThumbtackClone */,
+				2854975F196D9183003982A6 /* ThumbtackCloneTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2854973D196D9183003982A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2854975B196D9183003982A6 /* Images.xcassets in Resources */,
+				2854974D196D9183003982A6 /* InfoPlist.strings in Resources */,
+				28549756196D9183003982A6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2854975E196D9183003982A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2854976C196D9183003982A6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2854973B196D9183003982A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28549759196D9183003982A6 /* TCViewController.m in Sources */,
+				2854974F196D9183003982A6 /* main.m in Sources */,
+				28549753196D9183003982A6 /* TCAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2854975C196D9183003982A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2854976E196D9183003982A6 /* ThumbtackCloneTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		28549766196D9183003982A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2854973E196D9183003982A6 /* ThumbtackClone */;
+			targetProxy = 28549765196D9183003982A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2854974B196D9183003982A6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2854974C196D9183003982A6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		28549754196D9183003982A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28549755196D9183003982A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2854976A196D9183003982A6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2854976B196D9183003982A6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2854976F196D9183003982A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		28549770196D9183003982A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28549772196D9183003982A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThumbtackClone/ThumbtackClone-Prefix.pch";
+				INFOPLIST_FILE = "ThumbtackClone/ThumbtackClone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		28549773196D9183003982A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThumbtackClone/ThumbtackClone-Prefix.pch";
+				INFOPLIST_FILE = "ThumbtackClone/ThumbtackClone-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		28549775196D9183003982A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ThumbtackClone.app/ThumbtackClone";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThumbtackClone/ThumbtackClone-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ThumbtackCloneTests/ThumbtackCloneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		28549776196D9183003982A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ThumbtackClone.app/ThumbtackClone";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThumbtackClone/ThumbtackClone-Prefix.pch";
+				INFOPLIST_FILE = "ThumbtackCloneTests/ThumbtackCloneTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2854973A196D9183003982A6 /* Build configuration list for PBXProject "ThumbtackClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2854976F196D9183003982A6 /* Debug */,
+				28549770196D9183003982A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28549771196D9183003982A6 /* Build configuration list for PBXNativeTarget "ThumbtackClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28549772196D9183003982A6 /* Debug */,
+				28549773196D9183003982A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		28549774196D9183003982A6 /* Build configuration list for PBXNativeTarget "ThumbtackCloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28549775196D9183003982A6 /* Debug */,
+				28549776196D9183003982A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28549737196D9183003982A6 /* Project object */;
+}
