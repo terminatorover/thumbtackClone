@@ -77,14 +77,15 @@ static NSInteger currentSlide ;
     NSTimeInterval timeInterval = 4.0f;
 
     [NSTimer scheduledTimerWithTimeInterval:timeInterval
-                                     target:self 
+                                     target:self
                                     selector:@selector(move)
                                    userInfo:nil
                                     repeats:YES];
 
     
-    //
-    currentSlide = 0 ;
+    //move in the first slide "manually", aka without the use of the timer
+
+    currentSlide = 1 ;
     
 }
 
@@ -94,7 +95,7 @@ static NSInteger currentSlide ;
 
 -(void)viewDidAppear:(BOOL)animated{
     [self animateTopViewIn];
-    [self animateBottomViewIn];
+    [self moveIn];
 }
 
 
@@ -129,6 +130,7 @@ static BOOL clicked = NO;
         [self moveOut];
         clicked = NO;
     }
+//    [self move];
     
 }
 
@@ -167,8 +169,9 @@ static BOOL clicked = NO;
                          CGRect resetFrame = self.bottomView.frame;
                          resetFrame.origin.x = 400;
                          self.bottomView.frame = resetFrame;
+                         [self moveIn];
     }];
-
+    
     
 }
 
@@ -188,6 +191,9 @@ static BOOL clicked = NO;
 
 -(void)move{
     NSLog(@"FIRED TIMER");
+//    [self moveIn];
+    [self moveOut];
+    
     NSInteger currentSlideIndex = currentSlide % 3;
     UILabel *label = (UILabel *) [self.bottomView viewWithTag:0];
     UILabel *info = (UILabel *)[self.bottomView viewWithTag:1];
@@ -197,12 +203,12 @@ static BOOL clicked = NO;
     NSString *labelText = card[@"label"];
     NSString *infoText = card[@"info"];
     
+    label.text = labelText;
+    info.text = infoText;
+    
+//    [self moveOut];
+    
     currentSlide += 1;
-    if ( currentSlide %2 == 0){
-        [self moveIn];
-    }else{
-        [self moveOut];
-    }
 
     
 }
