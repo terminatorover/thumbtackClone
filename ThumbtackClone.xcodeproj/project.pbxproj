@@ -25,6 +25,9 @@
 		28549786196D9435003982A6 /* TCMatchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549785196D9435003982A6 /* TCMatchesViewController.m */; };
 		28549789196D9492003982A6 /* TCPrefrenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28549788196D9492003982A6 /* TCPrefrenceViewController.m */; };
 		2854978C196D951C003982A6 /* TCProjectSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */; };
+		28549790196D994D003982A6 /* blurred.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2854978F196D994D003982A6 /* blurred.jpeg */; };
+		28549792196DA05F003982A6 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28549791196DA05F003982A6 /* 2.jpg */; };
+		28549794196DA124003982A6 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 28549793196DA124003982A6 /* 10.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,9 @@
 		28549788196D9492003982A6 /* TCPrefrenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPrefrenceViewController.m; sourceTree = "<group>"; };
 		2854978A196D951C003982A6 /* TCProjectSubmitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCProjectSubmitViewController.h; sourceTree = "<group>"; };
 		2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCProjectSubmitViewController.m; sourceTree = "<group>"; };
+		2854978F196D994D003982A6 /* blurred.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blurred.jpeg; sourceTree = "<group>"; };
+		28549791196DA05F003982A6 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		28549793196DA124003982A6 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,11 +174,14 @@
 		28549777196D91A3003982A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				28549793196DA124003982A6 /* 10.jpg */,
+				28549791196DA05F003982A6 /* 2.jpg */,
 				28549781196D93F3003982A6 /* TCGettingStartedViewController.h */,
 				28549782196D93F3003982A6 /* TCGettingStartedViewController.m */,
 				28549784196D9435003982A6 /* TCMatchesViewController.h */,
 				28549785196D9435003982A6 /* TCMatchesViewController.m */,
 				28549787196D9492003982A6 /* TCPrefrenceViewController.h */,
+				2854978F196D994D003982A6 /* blurred.jpeg */,
 				28549788196D9492003982A6 /* TCPrefrenceViewController.m */,
 				2854978A196D951C003982A6 /* TCProjectSubmitViewController.h */,
 				2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */,
@@ -257,8 +266,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28549790196D994D003982A6 /* blurred.jpeg in Resources */,
 				2854975B196D9183003982A6 /* Images.xcassets in Resources */,
+				28549792196DA05F003982A6 /* 2.jpg in Resources */,
 				2854974D196D9183003982A6 /* InfoPlist.strings in Resources */,
+				28549794196DA124003982A6 /* 10.jpg in Resources */,
 				28549756196D9183003982A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

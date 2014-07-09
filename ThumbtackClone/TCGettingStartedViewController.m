@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"Here");
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
+    
 }
 
 - (void)didReceiveMemoryWarning
