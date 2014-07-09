@@ -78,7 +78,7 @@ static NSInteger currentSlide ;
 
     [NSTimer scheduledTimerWithTimeInterval:timeInterval
                                      target:self
-                                    selector:@selector(move)
+                                    selector:@selector(moveOut)
                                    userInfo:nil
                                     repeats:YES];
 
@@ -166,6 +166,23 @@ static BOOL clicked = NO;
                          self.bottomView.frame = bottomFrame;
                      }
                      completion:^(BOOL done){
+                         //figure out the right card(slide) and set it to the appropriate labels
+                         NSInteger currentSlideIndex = currentSlide % 3;
+                         UILabel *label = (UILabel *) [self.bottomView viewWithTag:0];
+                         UILabel *info = (UILabel *)[self.bottomView viewWithTag:1];
+                         
+                         NSDictionary *card = [self.cards objectAtIndex:currentSlideIndex];
+                         
+                         NSString *labelText = card[@"label"];
+                         NSString *infoText = card[@"info"];
+                         
+                         label.text = labelText;
+                         info.text = infoText;
+                         
+                         //    [self moveOut];
+                         
+                         currentSlide += 1;
+
                          CGRect resetFrame = self.bottomView.frame;
                          resetFrame.origin.x = 400;
                          self.bottomView.frame = resetFrame;
@@ -187,31 +204,7 @@ static BOOL clicked = NO;
 }
 
 
-#pragma mark - sets appropriate text and moves it
 
--(void)move{
-    NSLog(@"FIRED TIMER");
-//    [self moveIn];
-    [self moveOut];
-    
-    NSInteger currentSlideIndex = currentSlide % 3;
-    UILabel *label = (UILabel *) [self.bottomView viewWithTag:0];
-    UILabel *info = (UILabel *)[self.bottomView viewWithTag:1];
-    
-    NSDictionary *card = [self.cards objectAtIndex:currentSlideIndex];
-    
-    NSString *labelText = card[@"label"];
-    NSString *infoText = card[@"info"];
-    
-    label.text = labelText;
-    info.text = infoText;
-    
-//    [self moveOut];
-    
-    currentSlide += 1;
-
-    
-}
 
 
 /*
@@ -233,8 +226,8 @@ static BOOL clicked = NO;
                                 @"info":@"  Within hours, we'll introduce you to serveral professionals who can            complete your project"};
         NSDictionary *card2 = @{@"label":@"   Tell us what you need",
                                 @"info":@"   Let us know how we can help by answering questions about the projects you want to accomplish"};
-        NSDictionary *card3 = @{@"label":@"   Hire the right Professional",
-                                @"info":@"       Compare and hire an exprienced professional at a price that's right for you"};
+        NSDictionary *card3 = @{@"label":@" Hire the right Professional",
+                                @"info":@"Compare and hire an exprienced professional at a price that's right for you"};
         
         _cards = @[card1,card2,card3];
         
