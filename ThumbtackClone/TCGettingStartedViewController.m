@@ -102,6 +102,17 @@
     
 }
 
+static BOOL clicked = NO;
+- (IBAction)checker:(id)sender {
+    if (!clicked){
+        [self moveIn];
+        clicked  = YES;
+    }else{
+        [self moveOut];
+        clicked = NO;
+    }
+    
+}
 
 #pragma mark - set the views up so they are off the screen 
 -(void)setupTopBottomViews{
@@ -130,20 +141,27 @@
     CGRect bottomFrame = self.bottomView.frame;
     bottomFrame.origin.x = -300;
     
-    [UIView animateWithDuration:.3
+    [UIView animateWithDuration:.6
                      animations:^{
-                         self.bottomView.frame = bottomFrame;
                          
-                     }];
-
-    bottomFrame.origin.x = 400;
+                         self.bottomView.frame = bottomFrame;
+                         NSLog(@"Move out");
+                         NSLog(@"X cord: %f",self.bottomView.frame.origin.x);
+                     
+                     }
+                     completion:^(BOOL done){
+                         CGRect resetFrame = self.bottomView.frame;
+                         resetFrame.origin.x = 400;
+                         self.bottomView.frame = resetFrame;
+    }];
+    
 }
 
 -(void)moveIn{
     CGRect bottomFrame = self.bottomView.frame;
     bottomFrame.origin.x = 47;
     
-    [UIView animateWithDuration:.3
+    [UIView animateWithDuration:.6
                      animations:^{
                          self.bottomView.frame = bottomFrame;
                          
