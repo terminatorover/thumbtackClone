@@ -62,7 +62,7 @@ static NSInteger currentSlide ;
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"Here");
+
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     //setup
     [self setUpEmail];
@@ -218,6 +218,17 @@ static NSInteger currentSlide ;
     return _cards;
 
 }
+
+
+#pragma  mark - TextView Delegate method 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+
+    [self.email resignFirstResponder];
+    return YES;
+}
+
+
+
 
 
 
