@@ -174,19 +174,27 @@
 		28549777196D91A3003982A6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28549793196DA124003982A6 /* 10.jpg */,
-				28549791196DA05F003982A6 /* 2.jpg */,
+				28B5931B19770656008AF849 /* Images */,
 				28549781196D93F3003982A6 /* TCGettingStartedViewController.h */,
 				28549782196D93F3003982A6 /* TCGettingStartedViewController.m */,
 				28549784196D9435003982A6 /* TCMatchesViewController.h */,
 				28549785196D9435003982A6 /* TCMatchesViewController.m */,
 				28549787196D9492003982A6 /* TCPrefrenceViewController.h */,
-				2854978F196D994D003982A6 /* blurred.jpeg */,
 				28549788196D9492003982A6 /* TCPrefrenceViewController.m */,
 				2854978A196D951C003982A6 /* TCProjectSubmitViewController.h */,
 				2854978B196D951C003982A6 /* TCProjectSubmitViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		28B5931B19770656008AF849 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				28549793196DA124003982A6 /* 10.jpg */,
+				2854978F196D994D003982A6 /* blurred.jpeg */,
+				28549791196DA05F003982A6 /* 2.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,10 +429,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ROBERA GELETA (PJXU7W3M9Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThumbtackClone/ThumbtackClone-Prefix.pch";
 				INFOPLIST_FILE = "ThumbtackClone/ThumbtackClone-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9F28E390-F09C-4D46-BD51-CA590F0370C1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -434,10 +444,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ROBERA GELETA (PJXU7W3M9Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThumbtackClone/ThumbtackClone-Prefix.pch";
 				INFOPLIST_FILE = "ThumbtackClone/ThumbtackClone-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9F28E390-F09C-4D46-BD51-CA590F0370C1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -501,6 +513,7 @@
 				28549773196D9183003982A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		28549774196D9183003982A6 /* Build configuration list for PBXNativeTarget "ThumbtackCloneTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +522,7 @@
 				28549776196D9183003982A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *goBack;
 
 @property (weak, nonatomic) IBOutlet UIView *gettingStarted;
+@property (strong, nonatomic) IBOutlet UIView *accessoryView;
 @property (nonatomic) NSArray *cards;
 @end
 
@@ -33,9 +34,9 @@ static BOOL tappedGettingStarted;
     self.email.hidden = NO;
     [UIView  animateWithDuration:.4
                       animations:^{
-        self.email.alpha = 1.0f;
-
-    }];
+                          self.email.alpha = 1.0f;
+                          
+                      }];
     
     [self.email becomeFirstResponder];
     self.goBack.customView.hidden = NO;
@@ -50,7 +51,7 @@ static BOOL tappedGettingStarted;
     [self.email setEnabled:NO];
     
     self.email.alpha = 1.0f;
-
+    
     [UIView animateWithDuration:.4
                      animations:^{
                          self.email.alpha = 0.0f;
@@ -64,39 +65,40 @@ static BOOL tappedGettingStarted;
     //get back to the starting scene
     CGRect gettingStartedOriginalPostion = self.gettingStarted.frame;
     gettingStartedOriginalPostion.origin.y += 160.0f;
-
+    
     if(tappedGettingStarted){
         //first fade out the top view Controller
-    [UIView animateWithDuration:.5
-                     animations:^{
-                         self.gettingStarted.alpha = 0.0f;
-                         self.gettingStarted.frame = gettingStartedOriginalPostion  ;
-                     }
-                     completion:^(BOOL done){
-                         self.gettingStarted.userInteractionEnabled = NO;
-                         [UIView animateWithDuration:.5
-                                          animations:^{
-                                              self.topView.alpha = 1.0f;
-                                          }
-                                          completion:^(BOOL done){
-                                              NSLog(@"ALL DONE");
-                                              self.topView.userInteractionEnabled = YES;
-                                              tappedGettingStarted = NO;
-                                          }];
-                         
-                         
-                     }];
+        NSLog(@"Already Tapped");
+        [UIView animateWithDuration:.5
+                         animations:^{
+                             self.gettingStarted.alpha = 0.0f;
+                             self.gettingStarted.frame = gettingStartedOriginalPostion  ;
+                         }
+                         completion:^(BOOL done){
+                             self.gettingStarted.userInteractionEnabled = NO;
+                             [UIView animateWithDuration:.5
+                                              animations:^{
+                                                  self.topView.alpha = 1.0f;
+                                              }
+                                              completion:^(BOOL done){
+                                                  self.topView.userInteractionEnabled = YES;
+                                                  tappedGettingStarted = NO;
+                                                  
+                                              }];
+                             
+                             
+                         }];
     }
     
-    }
-    
+}
+
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     //setup
     [self setUpEmail];
@@ -109,18 +111,20 @@ static BOOL tappedGettingStarted;
     self.goBack.customView.hidden = YES;
     //
     NSTimeInterval timeInterval = 4.0f;
-
+    
     [NSTimer scheduledTimerWithTimeInterval:timeInterval
                                      target:self
-                                    selector:@selector(moveOut)
+                                   selector:@selector(moveOut)
                                    userInfo:nil
                                     repeats:YES];
     
-
+    
     //setup gettingStarted View
     [self setUpGettinStarted];
     tappedGettingStarted = NO;
     
+    UITextField *zipCode = (UITextField *)[self.gettingStarted viewWithTag:11];
+    zipCode.inputAccessoryView = _accessoryView;
     currentSlide = 1 ;
     
 }
@@ -140,7 +144,7 @@ static BOOL tappedGettingStarted;
 
 
 
-#pragma mark - seting up getting Started View when the view Loads 
+#pragma mark - seting up getting Started View when the view Loads
 -(void)setUpGettinStarted{
     //make the gettingStarted view no existant as far as the user is concerned
     self.gettingStarted.alpha = 0.0f;
@@ -160,33 +164,33 @@ static BOOL tappedGettingStarted;
     
     
     zipCode.attributedPlaceholder =[[NSAttributedString alloc] initWithString:placeHolderTextZipCode
-                                                                         attributes:@{NSForegroundColorAttributeName: color}];
+                                                                   attributes:@{NSForegroundColorAttributeName: color}];
     
-
+    
 }
 
 
 
 #pragma mark - getting the views into the screen
 -(void)animateTopViewIn{
-
-
+    
+    
     CGRect newFrame = self.topView.frame;
     newFrame.origin.y -= 50;
     
     [UIView animateWithDuration:.6
                      animations:^{
-        
-                        self.topView.frame = newFrame;
-                        self.topView.alpha = 1.0f;
-
-    }];
+                         
+                         self.topView.frame = newFrame;
+                         self.topView.alpha = 1.0f;
+                         
+                     }];
     
 }
 
 
 
-#pragma mark - set the views up so they are off the screen 
+#pragma mark - set the views up so they are off the screen
 -(void)setupTopBottomViews{
     
     
@@ -235,12 +239,12 @@ static BOOL tappedGettingStarted;
                          //    [self moveOut];
                          
                          currentSlide += 1;
-
+                         
                          CGRect resetFrame = self.bottomView.frame;
                          resetFrame.origin.x = 400;
                          self.bottomView.frame = resetFrame;
                          [self moveIn];
-    }];
+                     }];
     
     
 }
@@ -260,80 +264,110 @@ static BOOL tappedGettingStarted;
 - (IBAction)gettingStarted:(id)sender {
     //first fade out the top view Controller
     if(!tappedGettingStarted){
+        NSLog(@"Not Yet tapped");
         UIBarButtonItem *signIn  = self.navigationController.navigationItem.rightBarButtonItem;
         //strickly a hack to hide the barbutton item
-        signIn.width = 0.01;
-    
-    [UIView animateWithDuration:.5
-                     animations:^{
-                         self.topView.alpha = 0.0f;
-                     }
-                     completion:^(BOOL done){
-                         self.topView.userInteractionEnabled = NO;
-                         CGRect gettingStartedPostion = self.gettingStarted.frame;
-                         gettingStartedPostion.origin.y -= 160;
-                         //now animate in the gettingStartedView
-                         [UIView animateWithDuration:.5
-                                          animations:^{
-                                              self.gettingStarted.alpha = 1.0;
-                                              self.gettingStarted.frame = gettingStartedPostion;
-
-                                          }
-                                          completion:^(BOOL done){
-                                              NSLog(@"ALL DONE");
-                                              self.gettingStarted.userInteractionEnabled = YES;
-                                          
-                                          }];
-                         
-                         
-                         
-                         
-                     }];
-        tappedGettingStarted = YES;
+        //TODO:figure out a way to hide the sign in bar button item
+        signIn.style = UIBarButtonItemStylePlain;
+        //        btn.enabled = false;
+        //        btn.title = nil;
+        
+        signIn.title = nil;
+        signIn.enabled = NO;
+        
+        
+        [UIView animateWithDuration:.5
+                         animations:^{
+                             self.topView.alpha = 0.0f;
+                         }
+                         completion:^(BOOL done){
+                             self.topView.userInteractionEnabled = NO;
+                             CGRect gettingStartedPostion = self.gettingStarted.frame;
+                             gettingStartedPostion.origin.y -= 160;
+                             //now animate in the gettingStartedView
+                             [UIView animateWithDuration:.5
+                                              animations:^{
+                                                  self.gettingStarted.alpha = 1.0;
+                                                  self.gettingStarted.frame = gettingStartedPostion;
+                                                  
+                                              }
+                                              completion:^(BOOL done){
+                                                  self.gettingStarted.userInteractionEnabled = YES;
+                                                  tappedGettingStarted = YES;
+                                              }];
+                             
+                             
+                             
+                             
+                         }];
+        
     }
-
+    
     
 }
 
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - intalize what we set the info in the cards to show
 -(NSArray *) cards{
     
     if(!_cards){
-        NSDictionary *card1 = @{@"label":@"   We introduce you to pros",
+        NSDictionary *card1 = @{@"label":@"We introduce you to pros",
                                 @"info":@"  Within hours, we'll introduce you to serveral professionals who can            complete your project"};
-        NSDictionary *card2 = @{@"label":@"   Tell us what you need",
-                                @"info":@"   Let us know how we can help by answering questions about the projects you want to accomplish"};
-        NSDictionary *card3 = @{@"label":@"  Hire the right Professional",
+        NSDictionary *card2 = @{@"label":@"Tell us what you need",
+                                @"info":@"Let us know how we can help by answering questions about the projects you want to accomplish"};
+        NSDictionary *card3 = @{@"label":@"Hire the right Professional",
                                 @"info":@"Compare and hire an exprienced professional at a price that's right for you"};
         
         _cards = @[card1,card2,card3];
         
     }
     return _cards;
-
+    
 }
 
 
-#pragma  mark - TextView Delegate method 
+#pragma  mark - TextView Delegate method
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-
-    [self.email resignFirstResponder];
+    UITextField *serviceNeeded = (UITextField *)[self.gettingStarted viewWithTag:1];
+    UITextField *zipCode = (UITextField *)[self.gettingStarted viewWithTag:11];
+    
+    //TODO: add more logic -- potential API Calls.
+    NSLog(@"RESgin ");
+    if (textField == self.email){
+        [self.email resignFirstResponder];
+    }else if (textField == serviceNeeded){
+        
+        [serviceNeeded resignFirstResponder];
+    }else if(textField == zipCode){
+        [zipCode resignFirstResponder];
+    }
+    
     return YES;
+    
+    
 }
 
+- (IBAction)doneEnteringZipCode:(id)sender {
+    UITextField *zipCode = (UITextField *)[self.gettingStarted viewWithTag:11];
+    
+    //TODO: Have some API call to go to the server and get
+    
+    [zipCode resignFirstResponder];
+    
+    
+}
 
 
 
